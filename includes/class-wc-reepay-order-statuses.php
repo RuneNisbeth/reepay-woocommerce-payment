@@ -89,9 +89,10 @@ class WC_Reepay_Order_Statuses {
 			$pending_statuses['wc-refunded'],
 			$pending_statuses['wc-failed']
 		);
-
+		
 		$form_fields['status_created'] = array(
 			'title'       => __( 'Status: Reepay Created', 'woocommerce-gateway-reepay-checkout' ),
+			'description' => __( 'The initial status for a payment. We Recommend Pending Payment' ),
 			'type'        => 'select',
 			'options'     => $pending_statuses,
 			'default'     => 'wc-pending'
@@ -111,6 +112,7 @@ class WC_Reepay_Order_Statuses {
 
 		$form_fields['status_authorized'] = array(
 			'title'       => __( 'Status: Reepay Authorized', 'woocommerce-gateway-reepay-checkout' ),
+			'description' => __( 'A status for Payments you need to settle. We Recommend Processing' ),
 			'type'        => 'select',
 			'options'     => $authorized_statuses,
 			'default'     => 'wc-on-hold'
@@ -126,6 +128,7 @@ class WC_Reepay_Order_Statuses {
 
 		$form_fields['status_settled'] = array(
 			'title'       => __( 'Status: Reepay Settled', 'woocommerce-gateway-reepay-checkout' ),
+			'description' => __( 'A status for completed payments. We Recommend ‘Completed’' ),
 			'type'        => 'select',
 			'options'     => $settled_statuses,
 			'default'     => 'wc-processing'
